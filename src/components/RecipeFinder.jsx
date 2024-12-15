@@ -7,8 +7,8 @@ export default function RecipeFinder() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
- const API_ID = "33ee4876"; 
- const API_KEY = "bfee531bd0ae46359547d9a7bc610725"; 
+ const API_ID = ""; 
+ const API_KEY = ""; 
 
 
   // Handle search input change
