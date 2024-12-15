@@ -1,0 +1,113 @@
+li {
+  list-style: none;
+}
+.body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  margin: 2em;
+  position: relative; /* Ensure the overlay is positioned correctly */
+  background-image: url("../image/hero-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Black overlay with 50% opacity */
+  z-index: 1; /* Place the overlay above the background image */
+}
+
+.input-text {
+  color: white;
+  font-size: 25px;
+  z-index: 2;
+}
+
+input[type="text"] {
+  height: 6vh;
+  margin: 2em;
+  padding: 0.3em;
+  border: none;
+  text-align: center;
+}
+button {
+  height: 7vh;
+  border: none;
+  padding: 0.5em;
+  border-radius: 2px;
+  background: #e3a9af;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+.recipe {
+  height: 72vh;
+  overflow-y: scroll;
+  z-index: 2;
+  color: white;
+  margin: 20px;
+  width: 50%;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f100;
+}
+
+.recipe::-webkit-scrollbar {
+  width: 8px;
+}
+
+.recipe::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.recipe::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+.card {
+  border: 1px solid #333;
+  background-color: #e3b2a9;
+  color: black;
+  width: 70%;
+  margin: 20px auto; /* Center cards within the recipe container */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card li{
+  text-align: left;
+}
+.card a{
+  text-decoration: none;
+}
+@media (max-width: 500px) {
+  .body {
+    flex-direction: column; /* Keep column layout for larger screens */
+  }
+
+  .recipe {
+    width: 100%;
+    margin-left: 0px; /* Adjust width for larger screens */
+  }
+}
+@media (max-width: 380px) {
+
+  .recipe {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 85%; /* Adjust width for larger screens */
+  }
+  .card{
+    margin:0px;
+    margin-top:4px;
+  }
+}
